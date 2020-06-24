@@ -4,13 +4,509 @@
   <title><![CDATA[阿道博客备份]]></title>
   <link href="https://backup.adao.me/atom.xml" rel="self"/>
   <link href="https://backup.adao.me/"/>
-  <updated>2020-06-22T19:46:00+08:00</updated>
+  <updated>2020-06-24T13:50:54+08:00</updated>
   <id>https://backup.adao.me/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Telegram（电报）创建Bot机器人方法及相关配置]]></title>
+    <link href="https://backup.adao.me/15929739860951.html"/>
+    <updated>2020-06-24T12:46:26+08:00</updated>
+    <id>https://backup.adao.me/15929739860951.html</id>
+    <content type="html"><![CDATA[
+<h3 id="toc_0">准备工作</h3>
+
+<ul>
+<li>可以正常访问的telegram</li>
+</ul>
+
+<h3 id="toc_1">注册</h3>
+
+<ul>
+<li>打开telegram搜索“BotFather”</li>
+<li>输入消息窗口敲入以下命令</li>
+</ul>
+
+<blockquote>
+<p>/newbot</p>
+</blockquote>
+
+<p>显示：Alright, a new bot. How are we going to call it?</p>
+
+<p>Please choose a name for your bot.</p>
+
+<ul>
+<li>填入机器人名称</li>
+</ul>
+
+<blockquote>
+<p>这里我们输入任意名称</p>
+</blockquote>
+
+<p>会提示：Good. Now let&#39;s choose a username for your bot. It must end in <code>bot</code>. Like this, for example: TetrisBot or tetris_bot.</p>
+
+<ul>
+<li>名称格式要求为：TetrisBot or tetris_bot</li>
+</ul>
+
+<blockquote>
+<p>输入 share45_bot 可以根据需求命名</p>
+</blockquote>
+
+<ul>
+<li><p>如果显示：Sorry, this username is invalid.就需要更改</p></li>
+<li><p>直到显示：Done! Congratulations on your new bot. You will find it at <strong>t.me/share45_bot</strong>. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you&#39;ve finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.</p></li>
+</ul>
+
+<p>Use this token to access the HTTP API:</p>
+
+<blockquote>
+<p>xxxxxxxxxxxx 此处为api密钥（重要）</p>
+</blockquote>
+
+<p>Keep your token secure and store it safely, it can be used by anyone to control your bot.</p>
+
+<p>For a description of the Bot API, see this page:</p>
+
+<p><a href="https://core.telegram.org/bots/api">https://core.telegram.org/bots/api</a></p>
+
+<p><img src="media/15929739860951/Snipaste_2019-06-27_19-07-36.jpg" alt="Snipaste_2019-06-27_19-07-36"/></p>
+
+<h3 id="toc_2">机器人信息配置</h3>
+
+<ul>
+<li>这里我们继续输入消息来编辑机器人信息：</li>
+</ul>
+
+<blockquote>
+<p>/mybots</p>
+</blockquote>
+
+<ul>
+<li>就会出现我们创建的机器人列表，这里我们直接点击需要编辑的机器人名称即可。</li>
+</ul>
+
+<p>会显示六个选项：</p>
+
+<blockquote>
+<p>API Token：显示api密钥<br/>
+Edit Bot：编辑机器人<br/>
+Bot Settings：机器人设置<br/>
+Payments：支付<br/>
+Delete Bot：删除机器人<br/>
+Back...ots List：返回上一级列表</p>
+</blockquote>
+
+<ul>
+<li>我们主要说一下Edit Bot，点击这个按钮，同样是显示六个按钮：</li>
+</ul>
+
+<blockquote>
+<p>Edit Name：机器人名称<br/>
+Edit Description：机器人描述<br/>
+Edit About：机器人介绍<br/>
+Edit Botpic：机器人头像<br/>
+Edit Commands：机器人命令<br/>
+Back to bot：返回</p>
+</blockquote>
+
+<ul>
+<li>这里我主要讲一下：Edit Commands 点击命令</li>
+</ul>
+
+<p>显示：OK. Send me a list of commands for your bot. Please use this format:</p>
+
+<p>command1 - Description<br/>
+command2 - Another description</p>
+
+<ul>
+<li>这里命令的设置需要结合后期机器人做用来设置，这里我就已后面要讲的rss订阅机器人来设置。</li>
+</ul>
+
+<blockquote>
+<p>/rss  显示当前rss订阅地址 加raw显示地址链接<br/>
+/sub 订阅一个rss：/sub  订阅网站地址<br/>
+/unsub 退订一个rss：/unsub 退订网站地址<br/>
+/unsubbthis 使用此命令回复想要退订的 RSS 消息即可退订<br/>
+/export 导出为OPML</p>
+</blockquote>
+
+<h3 id="toc_3">最后检查</h3>
+
+<p>搜索框搜索我们的机器人名称，进入到频道</p>
+
+<p>就会看到我们之前设置好的相关信息</p>
+
+<p>在消息输入框输入“/”就可以看到我们之前设置好的命令</p>
+
+<p><img src="media/15929739860951/Snipaste_2019-06-25_18-58-10.jpg" alt="Snipaste_2019-06-25_18-58-10"/></p>
+
+<p>如果有需要修改的内容，可以到BotFather进行再次设置</p>
+
+<p>至此，我们的电报机器人就创建和配置完毕了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac 超级好用的输入法 鼠须管！]]></title>
+    <link href="https://backup.adao.me/15929738475500.html"/>
+    <updated>2020-06-24T12:44:07+08:00</updated>
+    <id>https://backup.adao.me/15929738475500.html</id>
+    <content type="html"><![CDATA[
+<h1 id="toc_0">安装</h1>
+
+<ol>
+<li><a href="https://rime.im/" title="鼠须管"><strong>鼠须管官网</strong></a>或者个<a href="https://github.com/rime/squirrel" title="github"><strong>Github</strong></a>下载</li>
+<li>安装主程序</li>
+<li>重启电脑
+<img src="media/15929738475500/Snipaste_2019-06-27_16-02-56.jpg" alt="Snipaste_2019-06-27_16-02-56"/></li>
+</ol>
+
+<p>目前就可以正常使用了，我们可以根据自己的需求来定义输入法方案</p>
+
+<blockquote>
+<p>可以通过组合键<code>CTRL+~</code>或者F4来进行切换</p>
+</blockquote>
+
+<h1 id="toc_1">配置</h1>
+
+<p>配置方面是可以根据自己的需求进行各种高级的自定义，但是对于刚接触的新手来说，会比较困难，这里我们直接采用大神配置好的文件进行设置</p>
+
+<blockquote>
+<p><a href="https://scomper.me/gtd/-shu-xu-guan-de-diao-jiao-bi-ji"><strong>「鼠须管」的调教笔记</strong></a>超详细配置教程</p>
+</blockquote>
+
+<p>我主要用简化字，就不过多折腾了，直接使用作者提供的配置包以及扩充词典文件</p>
+
+<p>1.<a href="https://www.dropbox.com/s/injkp0ta893oxfd/squirrel-patch.zip" title="配置包以及扩充词典文件"><strong>配置包以及扩充词典文件</strong></a><br/>
+2.解压文件<br/>
+3.进入到压缩包，全选文件复制<br/>
+4.通过上方截图进入到用户设定目录，将刚才复制的所有文件直接复制到此文件下<br/>
+5.再点击重新部署即可完成部署</p>
+
+<p><strong>注：每次修改文件都是需要重新部署才可以生效的</strong></p>
+
+<p>这篇文章就是鼠须管输入法编辑的，我这里使用的方案是简化字，感觉还不错，应该也可以满足大部分人的需求，如果想折腾的话，可以试试其他的方案，没准会有更好的体验！</p>
+
+<blockquote>
+<p>有人会问：一个输入法有什么好折腾的！</p>
+
+<p>这个输入法是可以给不同的软件设置成不同的方案，配合着配置文件可以。。。。是可以有无限可能的</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spectacle-Mac系统最好用免费窗口管理软件-中文版]]></title>
+    <link href="https://backup.adao.me/15929733535264.html"/>
+    <updated>2020-06-24T12:35:53+08:00</updated>
+    <id>https://backup.adao.me/15929733535264.html</id>
+    <content type="html"><![CDATA[
+<h1 id="toc_0">安装包下载</h1>
+
+<blockquote>
+<p><a href="https://s3.amazonaws.com/spectacle/downloads/Spectacle+1.2.zip" title="软件安装包">软件安装包</a><br/>
+<a href="https://github.com/sanqiit/spectacle/releases/download/1.2/zh_cn.lproj.zip" title="汉化包">汉化包</a><br/>
+<a href="https://github.com/eczarny/spectacle" title="项目地址">项目地址</a></p>
+</blockquote>
+
+<h1 id="toc_1">安装</h1>
+
+<blockquote>
+<p>1.压缩包分别解压<br/>
+2.将软件安装包移动到应用程序目录，打开（需要开启允许第三方程序安装）<br/>
+3.复制汉化包内所有的文件<br/>
+4.应用程序目录右键spectacle，显示包内容，并进入到/Contents/Resources目录下<br/>
+5.粘贴汉化包文件</p>
+</blockquote>
+
+<p><img src="media/15929733535264/Snipaste_2019-06-28_17-15-44.jpg" alt="Snipaste_2019-06-28_17-15-44"/></p>
+
+<h1 id="toc_2">汉化成功</h1>
+
+<blockquote>
+<p>菜单界面</p>
+</blockquote>
+
+<p><img src="media/15929733535264/Snipaste_2019-06-28_17-16-20.jpg" alt="Snipaste_2019-06-28_17-16-20"/></p>
+
+<blockquote>
+<p>设置界面</p>
+</blockquote>
+
+<p><img src="media/15929733535264/Snipaste_2019-06-28_17-17-56.jpg" alt="Snipaste_2019-06-28_17-17-56"/></p>
+
+<p><img src="media/15929733535264/Snipaste_2019-06-28_17-16-50.jpg" alt="Snipaste_2019-06-28_17-16-50"/></p>
+
+<blockquote>
+<p>下载的时候软件是英文版本的，使用了一段时间后，感觉软件还不错，就想着找个汉化的版本，google了一圈，没有找到，发现有日语，韩语，芬兰。。。。就是没有中文，虽然使用英文版本也没什么问题，但是总感觉别扭，我就随手汉化了，汉化包也pull了项目，不过感觉不一定会同意，毕竟三年没更新了。。。</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Typecho零基础搭建微信小程序-Wetypecho]]></title>
+    <link href="https://backup.adao.me/15929730852412.html"/>
+    <updated>2020-06-24T12:31:25+08:00</updated>
+    <id>https://backup.adao.me/15929730852412.html</id>
+    <content type="html"><![CDATA[
+<h1 id="toc_0">Wetypecho开源代码下载地址</h1>
+
+<p><a href="https://github.com/MingliangLu/WeTypecho" title="Wethpecho">Wethpecho</a></p>
+
+<h1 id="toc_1">搭建必要条件</h1>
+
+<p>微信方面</p>
+
+<ul>
+<li>域名已备案</li>
+<li>网站开启https</li>
+</ul>
+
+<p>网站方面</p>
+
+<ul>
+<li>设置固定链接</li>
+<li>网站开启https</li>
+</ul>
+
+<h1 id="toc_2">插件安装</h1>
+
+<ol>
+<li>插件安装包下载完成后解压</li>
+<li>we-typecho-plugin文件夹重命名为WeTypecho  重要！</li>
+<li>然后将修改好的文件夹上传至/usr/plugins目录下</li>
+<li>填写好相关数据即可<br/>
+注：api密钥自行设定，与小程序端API_SECRET一致即可</li>
+</ol>
+
+<h1 id="toc_3">微信小程序</h1>
+
+<ul>
+<li>小程序APPID获取</li>
+<li>服务器域名填写</li>
+</ul>
+
+<p><img src="media/15929730852412/Snipaste_2019-07-18_11-50-47.jpg" alt="Snipaste_2019-07-18_11-50-47"/></p>
+
+<h1 id="toc_4">小程序端配置</h1>
+
+<ul>
+<li>进入小程序源码</li>
+<li>打开根目录下config.js</li>
+</ul>
+
+<pre><code class="language-javascript">var domain = &quot;博客地址&quot;
+var name = &quot;小程序页脚名称&quot;
+var API_SECRET = &quot;与插件api密钥一致&quot;
+
+export default {
+    getdomain: domain,
+    getname: name,
+    getapisecret: API_SECRET
+}
+</code></pre>
+
+<p>app.json</p>
+
+<pre><code class="language-markup">{
+  &quot;debug&quot;: true,
+  &quot;window&quot;: {
+    &quot;navigationBarTextStyle&quot;: &quot;black&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#f5f5f5&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;小程序名称&quot;,
+    &quot;backgroundColor&quot;: &quot;#ffffff&quot;,
+    &quot;backgroundTextStyle&quot;: &quot;dark&quot;
+  },
+</code></pre>
+
+<p>Template/foot.wxml</p>
+
+<pre><code class="language-markup">&lt;template name=&quot;foot&quot;&gt;
+    &lt;view class=&quot;footerview&quot;&gt;  
+    &lt;text &gt;版权信息&lt;/text&gt;
+    &lt;/view&gt;
+    &lt;view class=&quot;footerviewwebsite&quot;&gt;  
+    &lt;text style&gt;版权信息&lt;/text&gt;
+    &lt;/view&gt;
+&lt;/template&gt;
+
+</code></pre>
+
+<h1 id="toc_5">常见问题</h1>
+
+<ul>
+<li>小程序调试报错：是否备案以及https</li>
+<li>图片缩略图不显示：图片是否使用CDN，是否将图片CDN地址添加到微信小程序合法域名，是否CDN白名单等</li>
+</ul>
+
+<p>如果检查了上面的问题，依旧不能正常显示图片，就有可能是主题和插件有冲突，本博客的主题就会出现文章添加其他字段后，再发布就会导致缩略图不能正常显示。</p>
+
+<h1 id="toc_6">小程序地址</h1>
+
+<p><img src="media/15929730852412/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="小程序二维码"/></p>
+
+<ul>
+<li>修改了小程序UI</li>
+<li>去除了部分不需要的功能</li>
+<li>增加了例如文章内页回到首页的按钮等</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[零基础利用Github免费搭建静态博客-hexo教程]]></title>
+    <link href="https://backup.adao.me/15929727149424.html"/>
+    <updated>2020-06-24T12:25:14+08:00</updated>
+    <id>https://backup.adao.me/15929727149424.html</id>
+    <content type="html"><![CDATA[
+<p>本次教程演示环境为mac系统，windows系统基本上是同样的步骤，这里就不过多说明了。</p>
+
+<h1 id="toc_0">安装准备</h1>
+
+<p>安装hexo之前，必须先保证电脑中已经安装了以下两款软件：</p>
+
+<ul>
+<li><a href="https://nodejs.org" title="node.js">node.js</a></li>
+<li>git（会提示安装，同意即可）</li>
+</ul>
+
+<h1 id="toc_1">开始安装</h1>
+
+<p>1.打开终端工具，输入以下命令进入到管理员权限：</p>
+
+<pre><code class="language-shell">   sudo su
+</code></pre>
+
+<p>2.安装npm，因为国内特殊情况，安装npm会比较缓慢，这里我们使用淘宝的cnpm来进行安装：</p>
+
+<pre><code class="language-shell">npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<p>4.安装hexo：</p>
+
+<pre><code class="language-shell">cnpm install -g hexo-cli
+</code></pre>
+
+<p>5.查看是否为用户目录，是的话继续操作，否则需要先进入到用户目录（一般为用户名的文件夹）</p>
+
+<p>6.新建目录，这里我创建为blog：</p>
+
+<pre><code class="language-shell">mkdir blog
+</code></pre>
+
+<p>7.进入到blog目录：</p>
+
+<pre><code class="language-shell">cd blog
+</code></pre>
+
+<p>8.初始化博客：</p>
+
+<pre><code class="language-shell">sudo hexo init
+</code></pre>
+
+<blockquote>
+<p>提示：INFO  Start blogging with Hexo! 为成功</p>
+</blockquote>
+
+<p>9.本地测试：</p>
+
+<pre><code class="language-shell">hexo s
+</code></pre>
+
+<blockquote>
+<p>显示<br/>
+INFO  Start processing<br/>
+INFO  Hexo is running at <a href="http://localhost:4000">http://localhost:4000</a> . Press Ctrl+C to stop.</p>
+</blockquote>
+
+<p>10.浏览器打开上方地址即可查看hexo博客</p>
+
+<p><img src="https://raw.githubusercontent.com/iadao/img/master/20200624122843.jpg" alt="默认标题_2019-07-18-0"/></p>
+
+<h1 id="toc_2">发布新文章</h1>
+
+<p>1.新建文章</p>
+
+<pre><code class="language-shell">hexo n &quot;文章标题&quot;
+</code></pre>
+
+<blockquote>
+<p>INFO  Created: /Users/ching/blog/source/_posts/文章标题.md</p>
+</blockquote>
+
+<p>2.进入文章（这里我就直接使用vim命令进行编辑,当然也是可以使用其他的Markdown编辑器）</p>
+
+<p>3.按i，并按回车进行编辑，这里我就随意输入一些内容，编辑完成后，按esc，并输入：wq，即可保存</p>
+
+<p>4.返回到blog目录，并进行清理：</p>
+
+<pre><code class="language-shell">hexo clear
+</code></pre>
+
+<p>5.生成网站内容</p>
+
+<pre><code class="language-shell">hexo g
+</code></pre>
+
+<p>6.再次使用hexo s 命令来启动本地测试，并进行查看是否发布成功<br/>
+<img src="https://raw.githubusercontent.com/iadao/img/master/20200624122848.jpg" alt="Snipaste_2019-07-25_19-07-32"/></p>
+
+<h1 id="toc_3">本地网站发到到网络</h1>
+
+<p>今天我们就演示如何将网站发布到github上。</p>
+
+<p>1.登录到github<br/>
+2.新建新的仓库</p>
+
+<ul>
+<li>右上角+号点击new repository</li>
+<li>仓库名：github用户名+github.io</li>
+<li>填写好描述</li>
+<li>点击create repository 创建即可</li>
+</ul>
+
+<p>3.返回到本地终端，并安装插件hexo-deployer-git：</p>
+
+<pre><code class="language-shell">cnpm install --save hexo-deployer-git
+</code></pre>
+
+<p>4.打开配置文件：</p>
+
+<pre><code class="language-shell">vim _config.yml
+</code></pre>
+
+<p>5.移动到文档末尾，编辑修改：</p>
+
+<blockquote>
+<p>deploy:<br/>
+  type: git<br/>
+  repo: <a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9D%80.github.io.git">https://github.com/用户名/自定义地址.github.io.git</a><br/>
+  branch: master</p>
+</blockquote>
+
+<p>6.部署到github：</p>
+
+<pre><code class="language-shell">hexo d
+</code></pre>
+
+<blockquote>
+<p>输入github账号密码,显示INFO  Deploy done: git为成功</p>
+</blockquote>
+
+<p>7.登录到我们的网址进行查看<br/>
+<img src="https://raw.githubusercontent.com/iadao/img/master/20200624122854.jpg" alt="Snipaste_2019-07-25_19-55-13"/></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[navicat-宝塔面板-如何连接MySql数据库]]></title>

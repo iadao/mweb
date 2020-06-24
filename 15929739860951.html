@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+    Telegram（电报）创建Bot机器人方法及相关配置 - 阿道博客备份
+    
+    </title>
+    
+
+    
+    
+    <link href="atom.xml" rel="alternate" title="阿道博客备份" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/style.min.css">
+    <link rel="stylesheet" href="asset/css/doc.css">
+    <script src="asset/app.js"></script>
+</head>
+  <body>
+    <section class="hero">
+      <div class="hero-head">
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+              <div class="container">
+              <div class="navbar-brand">
+                
+                <a target="_self" class="navbar-item " href="index.html">Home</a>
+                
+                <a target="_self" class="navbar-item " href="archives.html">Archives</a>
+                
+                <a target="_self" class="navbar-item " href="about.html">关于</a>
+                
+
+                <a role="button" id="navbarSNSRssSwitchBtn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarSNSRssButtons">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                </a>
+              </div>
+            
+              <div id="navbarSNSRssButtons" class="navbar-menu">
+                <div class="navbar-start">
+                  
+                </div>
+            
+                <div class="navbar-end">
+                  <div class="navbar-item">
+                    <!--buttons start-->
+                    <div class="buttons">
+                      
+                        
+                        
+                        
+                        
+                      
+                      <a href="atom.xml" target="_blank" title="RSS">
+                          <span class="icon is-large has-text-black-bis">
+                              <svg class="svg-inline--fa fa-rss fa-w-14 fa-lg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rss" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"></path></svg><!-- <i class="fas fa-rss fa-lg"></i> -->
+                          </span>
+                      </a>
+                    </div>
+                    <!--buttons end-->
+
+                  </div>
+                </div>
+                </div>
+              </div>
+            </nav>
+      </div>
+
+ <div class="hero-body ct-body"></div>
+      
+    </section>
+    <section class="ct-body">
+      <div class="container">
+          <div class="columns is-variable bd-klmn-columns is-4 is-centered">
+              <div class="column is-four-fifths">
+                  <div class="post-body single-content">
+                    
+                    <h1 class="title">
+                            Telegram（电报）创建Bot机器人方法及相关配置   
+                      </h1>
+                     
+                    
+                      <div class="media">
+                            
+                            <div class="media-content">
+                              <div class="content">
+                                <p>
+                                 <span class="date">2020/06/24</span>
+                                  <span class="tran-posted-in">posted in</span>&nbsp; 
+                                  
+                                      <span class="posted-in"><a href='%E8%BD%AF%E4%BB%B6.html'>软件</a></span>
+                                         
+                                  
+
+                                   
+                                      
+                                  <br />
+                                  <span class="tran-tags">Tags:</span>&nbsp;
+                                     
+
+                                </p>
+                              </div>
+                            </div>
+                         
+                    </div>
+                </div>
+                  <article class="markdown-body single-content">
+                    <h3 id="toc_0">准备工作</h3>
+
+<ul>
+<li>可以正常访问的telegram</li>
+</ul>
+
+<h3 id="toc_1">注册</h3>
+
+<ul>
+<li>打开telegram搜索“BotFather”</li>
+<li>输入消息窗口敲入以下命令</li>
+</ul>
+
+<blockquote>
+<p>/newbot</p>
+</blockquote>
+
+<p>显示：Alright, a new bot. How are we going to call it?</p>
+
+<p>Please choose a name for your bot.</p>
+
+<ul>
+<li>填入机器人名称</li>
+</ul>
+
+<blockquote>
+<p>这里我们输入任意名称</p>
+</blockquote>
+
+<p>会提示：Good. Now let&#39;s choose a username for your bot. It must end in <code>bot</code>. Like this, for example: TetrisBot or tetris_bot.</p>
+
+<ul>
+<li>名称格式要求为：TetrisBot or tetris_bot</li>
+</ul>
+
+<blockquote>
+<p>输入 share45_bot 可以根据需求命名</p>
+</blockquote>
+
+<ul>
+<li><p>如果显示：Sorry, this username is invalid.就需要更改</p></li>
+<li><p>直到显示：Done! Congratulations on your new bot. You will find it at <strong>t.me/share45_bot</strong>. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you&#39;ve finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.</p></li>
+</ul>
+
+<p>Use this token to access the HTTP API:</p>
+
+<blockquote>
+<p>xxxxxxxxxxxx 此处为api密钥（重要）</p>
+</blockquote>
+
+<p>Keep your token secure and store it safely, it can be used by anyone to control your bot.</p>
+
+<p>For a description of the Bot API, see this page:</p>
+
+<p><a href="https://core.telegram.org/bots/api">https://core.telegram.org/bots/api</a></p>
+
+<p><img src="media/15929739860951/Snipaste_2019-06-27_19-07-36.jpg" alt="Snipaste_2019-06-27_19-07-36"/></p>
+
+<h3 id="toc_2">机器人信息配置</h3>
+
+<ul>
+<li>这里我们继续输入消息来编辑机器人信息：</li>
+</ul>
+
+<blockquote>
+<p>/mybots</p>
+</blockquote>
+
+<ul>
+<li>就会出现我们创建的机器人列表，这里我们直接点击需要编辑的机器人名称即可。</li>
+</ul>
+
+<p>会显示六个选项：</p>
+
+<blockquote>
+<p>API Token：显示api密钥<br/>
+Edit Bot：编辑机器人<br/>
+Bot Settings：机器人设置<br/>
+Payments：支付<br/>
+Delete Bot：删除机器人<br/>
+Back...ots List：返回上一级列表</p>
+</blockquote>
+
+<ul>
+<li>我们主要说一下Edit Bot，点击这个按钮，同样是显示六个按钮：</li>
+</ul>
+
+<blockquote>
+<p>Edit Name：机器人名称<br/>
+Edit Description：机器人描述<br/>
+Edit About：机器人介绍<br/>
+Edit Botpic：机器人头像<br/>
+Edit Commands：机器人命令<br/>
+Back to bot：返回</p>
+</blockquote>
+
+<ul>
+<li>这里我主要讲一下：Edit Commands 点击命令</li>
+</ul>
+
+<p>显示：OK. Send me a list of commands for your bot. Please use this format:</p>
+
+<p>command1 - Description<br/>
+command2 - Another description</p>
+
+<ul>
+<li>这里命令的设置需要结合后期机器人做用来设置，这里我就已后面要讲的rss订阅机器人来设置。</li>
+</ul>
+
+<blockquote>
+<p>/rss  显示当前rss订阅地址 加raw显示地址链接<br/>
+/sub 订阅一个rss：/sub  订阅网站地址<br/>
+/unsub 退订一个rss：/unsub 退订网站地址<br/>
+/unsubbthis 使用此命令回复想要退订的 RSS 消息即可退订<br/>
+/export 导出为OPML</p>
+</blockquote>
+
+<h3 id="toc_3">最后检查</h3>
+
+<p>搜索框搜索我们的机器人名称，进入到频道</p>
+
+<p>就会看到我们之前设置好的相关信息</p>
+
+<p>在消息输入框输入“/”就可以看到我们之前设置好的命令</p>
+
+<p><img src="media/15929739860951/Snipaste_2019-06-25_18-58-10.jpg" alt="Snipaste_2019-06-25_18-58-10"/></p>
+
+<p>如果有需要修改的内容，可以到BotFather进行再次设置</p>
+
+<p>至此，我们的电报机器人就创建和配置完毕了。</p>
+
+                  </article>
+                  <div class="comments-wrap">
+                    <div class="share-comments">
+                      
+
+                      
+
+                      
+                    </div>
+                  </div><!-- end comments wrap -->
+              </div>
+            </div><!-- end columns -->
+      </div><!-- end container -->
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+              Copyright &copy; 2020 adao.me
+          </p>
+        </div>
+      </footer>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  </body>
+</html>
