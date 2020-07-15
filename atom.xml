@@ -4,7 +4,7 @@
   <title><![CDATA[阿道博客备份]]></title>
   <link href="https://backup.adao.me/atom.xml" rel="self"/>
   <link href="https://backup.adao.me/"/>
-  <updated>2020-07-15T17:45:52+08:00</updated>
+  <updated>2020-07-15T19:42:50+08:00</updated>
   <id>https://backup.adao.me/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -53,9 +53,10 @@
 <code>git clone https://github.com/gaopeng-hz/PicBed4MWeb.git</code></li>
 <li> 安装依赖 
 <code>npm install</code></li>
-<li>修改项目目录中的config.json文件
-<img src="media/15929787426654/15948037423632.jpg" alt="" style="width:417px;"/></li>
+<li>修改项目目录中的config.json文件</li>
 </ol>
+
+<p><img src="media/15929787426654/15948037423632.jpg" alt="" style="width:417px;"/></p>
 
 <p>参考如下</p>
 
@@ -76,8 +77,9 @@
 <p>根据config填写完成</p>
 
 <p>可以点击右下方的验证来查看上传服务是否正常<br/>
-上传成功为下图<br/>
-<img src="media/15929787426654/15948050315097.jpg" alt="" style="width:420px;"/></p>
+上传成功为下图</p>
+
+<p><img src="media/15929787426654/15948050315097.jpg" alt="" style="width:420px;"/></p>
 
 <h3 id="toc_3">正常上传</h3>
 
