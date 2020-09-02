@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://backup.adao.me/</loc>
-  <lastmod>2020-07-15T19:42:54+08:00</lastmod>
+  <lastmod>2020-09-02T20:18:06+08:00</lastmod>
+</url>
+
+<url>
+  <loc>https://backup.adao.me/15986115941423.html</loc>
+  <lastmod>2020-08-28T18:46:34+08:00</lastmod>
 </url>
 
 <url>
@@ -87,6 +92,10 @@
 
 <url>
   <loc>https://backup.adao.me/%E8%B5%84%E6%BA%90.html</loc>
+</url>
+
+<url>
+  <loc>https://backup.adao.me/%E7%94%9F%E6%B4%BB.html</loc>
 </url>
 
 <url>
