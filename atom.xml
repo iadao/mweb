@@ -4,13 +4,172 @@
   <title><![CDATA[阿道博客备份]]></title>
   <link href="https://backup.adao.me/atom.xml" rel="self"/>
   <link href="https://backup.adao.me/"/>
-  <updated>2020-09-29T14:24:03+08:00</updated>
+  <updated>2020-09-29T14:26:30+08:00</updated>
   <id>https://backup.adao.me/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[OpenClash 安装和简单使用教程及常见错误解决（openwrt）]]></title>
+    <link href="https://backup.adao.me/15962803481021.html"/>
+    <updated>2020-08-01T19:12:28+08:00</updated>
+    <id>https://backup.adao.me/15962803481021.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">项目介绍</h2>
+
+<ul>
+<li>项目地址：<a href="https://github.com/vernesong/OpenClash">OpenClash</a></li>
+<li>官方文档：<a href="https://github.com/vernesong/OpenClash/wiki">wiki</a></li>
+<li>Clash内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/Clash">Clash</a></li>
+<li>TUN模式内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/TUN-Premium">clash_tun</a></li>
+<li>TUN游戏模式内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/TUN">clash_game</a></li>
+<li>历史版本下载：<a href="https://github.com/vernesong/OpenClash/releases">下载</a></li>
+</ul>
+
+<h2 id="toc_1">安装</h2>
+
+<h3 id="toc_2">安装环境</h3>
+
+<ul>
+<li>架构：MediaTek MT7621 </li>
+<li>固件版本：OpenWrt R20.8.27 / LuCI Master (git-20.223.26773-d18ef13)</li>
+<li>内核版本：5.4.59</li>
+</ul>
+
+<h3 id="toc_3">进入后台</h3>
+
+<p>通过终端行进入</p>
+
+<pre><code class="language-text">ssh root@192.168.1.1
+</code></pre>
+
+<p>如果不能正常登录，请检查密码是否正确或者后台ssh登录是否开启</p>
+
+<h3 id="toc_4">依赖安装</h3>
+
+<ol>
+<li>更新</li>
+</ol>
+
+<pre><code class="language-text">opkg update
+</code></pre>
+
+<p>如更新错误，请检查系统-软件包-配置内地址是否可用<br/>
+小娱路由器软件源（MT7621）</p>
+
+<pre><code class="language-text">src/gz openwrt_core https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/packages/
+src/gz openwrt_base https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/base/
+src/gz openwrt_luci https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/luci/
+src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/packages
+src/gz openwrt_routing https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/routing
+src/gz openwrt_telephony https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/telephony
+</code></pre>
+
+<p>2.安装依赖<br/>
+coreutils-nohup, bash, iptables, dnsmasq-full, curl, jsonfilter, ca-certificates, ipset, ip-full, iptables-mod-tproxy</p>
+
+<p>按顺序安装以上依赖，每个依赖单独安装</p>
+
+<p>无法安装 kmod-tun（显示内核版本不匹配）<br/>
+强制安装</p>
+
+<pre><code class="language-text">opkg install kmod-tun --force-depends 
+</code></pre>
+
+<p>同样问题都可以使用以上方法解决</p>
+
+<p>报错：opkg_conf_load: Could not lock /var/lock/opkg.lock: Resource temporarily unavailable.</p>
+
+<pre><code class="language-text">rm -f /var/lock/opkg.lock
+</code></pre>
+
+<p>确认依赖安装成功后可进行后续的操作</p>
+
+<h2 id="toc_5">主程序安装</h2>
+
+<ol>
+<li>进入tmp目录</li>
+</ol>
+
+<pre><code class="language-text">cd /tmp/tmp/
+</code></pre>
+
+<ol>
+<li>下载及安装ipk（目前最新版本0.40.6）</li>
+</ol>
+
+<pre><code class="language-text">wget https://github.com/vernesong/OpenClash/releases/download/v0.40.6-beta/luci-app-openclash_0.40.6-beta_all.ipk
+opkg install luci-app-openclash_0.40.6-beta_all.ipk
+</code></pre>
+
+<p>注意软件名根据下载版本更改</p>
+
+<h2 id="toc_6">内核下载</h2>
+
+<ol>
+<li><p>进入到内核目录（根据自己的硬件选择）</p></li>
+</ol>
+
+<ul>
+<li>clash内核</li>
+</ul>
+
+<pre><code class="language-text">cd /etc/openclash/core/
+wget https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-mipsle-softfloat.tar.gz
+tar -zxvf clash-linux-mipsle-softfloat.tar.gz
+chmod 777 clash
+</code></pre>
+
+<p>其他内核方法一致</p>
+
+<p>安装完毕</p>
+
+<h2 id="toc_7">配置设置</h2>
+
+<h3 id="toc_8">模式设置</h3>
+
+<p>推荐Fake-IP模式</p>
+
+<h3 id="toc_9">常规设置</h3>
+
+<ul>
+<li>内核编译版本：linux-mipsle-softfloat<br/>
+### DNS设置</li>
+<li>本地DNS：启用</li>
+<li>自定义上游DNS服务器：启用</li>
+<li>勾选以下DNS
+<img src="media/15962803481021/16013588803794.jpg" alt="" style="width:982px;"/></li>
+</ul>
+
+<h3 id="toc_10">规则设置</h3>
+
+<p><img src="media/15962803481021/16013589558909.jpg" alt="" style="width:852px;"/></p>
+
+<h3 id="toc_11">第三方规则订阅</h3>
+
+<p><img src="media/15962803481021/16013589944993.jpg" alt="" style="width:422px;"/></p>
+
+<h3 id="toc_12">服务器与策略组</h3>
+
+<p><img src="media/15962803481021/16013590866630.jpg" alt="" style="width:839px;"/></p>
+
+<h3 id="toc_13">上传配置文件</h3>
+
+<p>自行研究</p>
+
+<p>保存配置并应用</p>
+
+<h2 id="toc_14">启动成功</h2>
+
+<p><img src="media/15962803481021/16013592605139.jpg" alt="" style="width:980px;"/></p>
+
+<p><img src="media/15962803481021/%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B61601359572043.png" alt="默认文件1601359572043"/></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[西藏 | 讲过去的年华与现在的时光 | 拉萨 · 纳木措 · 羊卓雍措 · 日喀则 · 珠峰大本营]]></title>
@@ -169,165 +328,6 @@
 <li>纳木措的扎西半岛和珠峰大本营建议不要去，商业化严重，也没什么看的，收费也是坑的不行，跟团还好，自驾的话强烈不推荐去珠峰大本营！</li>
 <li>因为我们去拉萨的时候，正好赶上雪顿节，在外面吃饭的时候，会不断的有人来要钱，你不给的话，就赖着不走，这事我是真的生气了，差点打人，一个人要我也就算了，一会来一个，这就太过分了。</li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OpenClash 安装和简单使用教程及常见错误解决（openwrt）]]></title>
-    <link href="https://backup.adao.me/15962803481021.html"/>
-    <updated>2020-08-01T19:12:28+08:00</updated>
-    <id>https://backup.adao.me/15962803481021.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">项目介绍</h2>
-
-<ul>
-<li>项目地址：<a href="https://github.com/vernesong/OpenClash">OpenClash</a></li>
-<li>官方文档：<a href="https://github.com/vernesong/OpenClash/wiki">wiki</a></li>
-<li>Clash内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/Clash">Clash</a></li>
-<li>TUN模式内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/TUN-Premium">clash_tun</a></li>
-<li>TUN游戏模式内核：<a href="https://github.com/vernesong/OpenClash/releases/tag/TUN">clash_game</a></li>
-<li>历史版本下载：<a href="https://github.com/vernesong/OpenClash/releases">下载</a></li>
-</ul>
-
-<h2 id="toc_1">安装</h2>
-
-<h3 id="toc_2">安装环境</h3>
-
-<ul>
-<li>架构：MediaTek MT7621 </li>
-<li>固件版本：OpenWrt R20.8.27 / LuCI Master (git-20.223.26773-d18ef13)</li>
-<li>内核版本：5.4.59</li>
-</ul>
-
-<h3 id="toc_3">进入后台</h3>
-
-<p>通过终端行进入</p>
-
-<pre><code class="language-text">ssh root@192.168.1.1
-</code></pre>
-
-<p>如果不能正常登录，请检查密码是否正确或者后台ssh登录是否开启</p>
-
-<h3 id="toc_4">依赖安装</h3>
-
-<ol>
-<li>更新</li>
-</ol>
-
-<pre><code class="language-text">opkg update
-</code></pre>
-
-<p>如更新错误，请检查系统-软件包-配置内地址是否可用<br/>
-小娱路由器软件源（MT7621）</p>
-
-<pre><code class="language-text">src/gz openwrt_core https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/packages/
-src/gz openwrt_base https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/base/
-src/gz openwrt_luci https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/luci/
-src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/packages
-src/gz openwrt_routing https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/routing
-src/gz openwrt_telephony https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/telephony
-</code></pre>
-
-<p>2.安装依赖<br/>
-coreutils-nohup, bash, iptables, dnsmasq-full, curl, jsonfilter, ca-certificates, ipset, ip-full, iptables-mod-tproxy</p>
-
-<p>按顺序安装以上依赖，每个依赖单独安装</p>
-
-<p>无法安装 kmod-tun（显示内核版本不匹配）<br/>
-强制安装</p>
-
-<pre><code class="language-text">opkg install kmod-tun --force-depends 
-</code></pre>
-
-<p>同样问题都可以使用以上方法解决</p>
-
-<p>报错：opkg_conf_load: Could not lock /var/lock/opkg.lock: Resource temporarily unavailable.</p>
-
-<pre><code class="language-text">rm -f /var/lock/opkg.lock
-</code></pre>
-
-<p>确认依赖安装成功后可进行后续的操作</p>
-
-<h2 id="toc_5">主程序安装</h2>
-
-<ol>
-<li>进入tmp目录</li>
-</ol>
-
-<pre><code class="language-text">cd /tmp/tmp/
-</code></pre>
-
-<ol>
-<li>下载及安装ipk（目前最新版本0.40.6）</li>
-</ol>
-
-<pre><code class="language-text">wget https://github.com/vernesong/OpenClash/releases/download/v0.40.6-beta/luci-app-openclash_0.40.6-beta_all.ipk
-opkg install luci-app-openclash_0.40.6-beta_all.ipk
-</code></pre>
-
-<p>注意软件名根据下载版本更改</p>
-
-<h2 id="toc_6">内核下载</h2>
-
-<ol>
-<li><p>进入到内核目录（根据自己的硬件选择）</p></li>
-</ol>
-
-<ul>
-<li>clash内核</li>
-</ul>
-
-<pre><code class="language-text">cd /etc/openclash/core/
-wget https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-mipsle-softfloat.tar.gz
-tar -zxvf clash-linux-mipsle-softfloat.tar.gz
-chmod 777 clash
-</code></pre>
-
-<p>其他内核方法一致</p>
-
-<p>安装完毕</p>
-
-<h2 id="toc_7">配置设置</h2>
-
-<h3 id="toc_8">模式设置</h3>
-
-<p>推荐Fake-IP模式</p>
-
-<h3 id="toc_9">常规设置</h3>
-
-<ul>
-<li>内核编译版本：linux-mipsle-softfloat<br/>
-### DNS设置</li>
-<li>本地DNS：启用</li>
-<li>自定义上游DNS服务器：启用</li>
-<li>勾选以下DNS
-<img src="media/15962803481021/16013588803794.jpg" alt="" style="width:982px;"/></li>
-</ul>
-
-<h3 id="toc_10">规则设置</h3>
-
-<p><img src="media/15962803481021/16013589558909.jpg" alt="" style="width:852px;"/></p>
-
-<h3 id="toc_11">第三方规则订阅</h3>
-
-<p><img src="media/15962803481021/16013589944993.jpg" alt="" style="width:422px;"/></p>
-
-<h3 id="toc_12">服务器与策略组</h3>
-
-<p><img src="media/15962803481021/16013590866630.jpg" alt="" style="width:839px;"/></p>
-
-<h3 id="toc_13">上传配置文件</h3>
-
-<p>自行研究</p>
-
-<p>保存配置并应用</p>
-
-<h2 id="toc_14">启动成功</h2>
-
-<p><img src="media/15962803481021/16013592605139.jpg" alt="" style="width:980px;"/></p>
-
-<p><img src="media/15962803481021/%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B61601359572043.png" alt="默认文件1601359572043"/></p>
 
 ]]></content>
   </entry>
