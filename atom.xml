@@ -4,13 +4,98 @@
   <title><![CDATA[阿道博客备份]]></title>
   <link href="https://backup.adao.me/atom.xml" rel="self"/>
   <link href="https://backup.adao.me/"/>
-  <updated>2020-09-29T14:26:30+08:00</updated>
+  <updated>2021-03-05T13:35:40+08:00</updated>
   <id>https://backup.adao.me/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[AdGuard Home 基础教程]]></title>
+    <link href="https://backup.adao.me/16087931647653.html"/>
+    <updated>2020-12-24T14:59:24+08:00</updated>
+    <id>https://backup.adao.me/16087931647653.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">安装过程</h2>
+
+<h2 id="toc_1">设置</h2>
+
+<h3 id="toc_2">常规设置</h3>
+
+<p><img src="media/16087931647653/16087933770948.jpg" alt="" style="width:1201px;"/></p>
+
+<h3 id="toc_3">DNS设置</h3>
+
+<h4 id="toc_4">DNS 设置</h4>
+
+<blockquote>
+<p>tls://dns.pub<br/>
+<a href="https://dns.pub/dns-query">https://dns.pub/dns-query</a><br/>
+tls://dns.alidns.com<br/>
+<a href="https://dns.alidns.com/dns-query">https://dns.alidns.com/dns-query</a><br/>
+119.29.29.29<br/>
+223.5.5.5</p>
+</blockquote>
+
+<p><img src="media/16087931647653/16087934779499.jpg" alt="" style="width:1185px;"/></p>
+
+<p><img src="media/16087931647653/16087935777407.jpg" alt="" style="width:1166px;"/></p>
+
+<h4 id="toc_5">DNS 服务设定</h4>
+
+<p>速度限制：0<br/>
+使用 EDNS ：勾选<br/>
+使用 DNSSEC : 勾选<br/>
+禁用 IPv6 ：如果不使用IPv6，建议直接禁用<br/>
+<img src="media/16087931647653/16087937336116.jpg" alt="" style="width:1166px;"/></p>
+
+<h4 id="toc_6">DNS缓存配置</h4>
+
+<p><img src="media/16087931647653/16087938098568.jpg" alt="" style="width:1179px;"/></p>
+
+<h3 id="toc_7">加密设置</h3>
+
+<h3 id="toc_8">客户端设置</h3>
+
+<h3 id="toc_9">DHCP 设置</h3>
+
+<h2 id="toc_10">过滤器</h2>
+
+<h3 id="toc_11">DNS封锁清单</h3>
+
+<p><img src="media/16087931647653/16087940358262.jpg" alt="" style="width:1184px;"/></p>
+
+<h4 id="toc_12">推荐列表</h4>
+
+<p>anti-AD（命中率高、兼容性强）：<a href="https://anti-ad.net/easylist.txt">https://anti-ad.net/easylist.txt</a><br/>
+halflife（涵盖了 EasyList China、EasyList Lite、CJX &#39;s Annoyance、乘风视频过滤规则，以及补充的其它规则）：<a href="https://gitee.com/halflife/list/raw/master/ad.txt">https://gitee.com/halflife/list/raw/master/ad.txt</a><br/>
+EasyList China（面向中文用户的 EasyList 去广告规则）：<a href="https://easylist-downloads.adblockplus.org/easylistchina.txt">https://easylist-downloads.adblockplus.org/easylistchina.txt</a><br/>
+EasyPrivacy（    反隐私跟踪、挖矿规则）：<a href="https://easylist-downloads.adblockplus.org/easyprivacy.txt">https://easylist-downloads.adblockplus.org/easyprivacy.txt</a><br/><br/>
+Xinggsf （乘风通用国内网站广告过滤规则）：<a href="https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt">https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt</a><br/>
+Xinggsf （乘风视频视频网站广告过滤规则）：<a href="https://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt">https://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt</a></p>
+
+<h3 id="toc_13">DNS允许清单</h3>
+
+<p>DNS 重写<br/>
+已阻止的服务<br/>
+自定义过滤规则</p>
+
+<h2 id="toc_14">查询日志</h2>
+
+<p><img src="media/16087931647653/16087945839323.jpg" alt="" style="width:1188px;"/></p>
+
+<h2 id="toc_15">设置指导</h2>
+
+<p><img src="media/16087931647653/16087945390036.jpg" alt="" style="width:769px;"/></p>
+
+<h2 id="toc_16">完成~</h2>
+
+<p><img src="media/16087931647653/16087953059131.jpg" alt="" style="width:1232px;"/></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenClash 安装和简单使用教程及常见错误解决（openwrt）]]></title>
